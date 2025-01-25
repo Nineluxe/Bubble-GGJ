@@ -37,7 +37,7 @@
     {"id":{"name":"oBubble","path":"objects/oBubble/oBubble.yy",},},
     {"id":{"name":"oController","path":"objects/oController/oController.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"rPlay","path":"rooms/rPlay/rPlay.yy",},},
     {"id":{"name":"general","path":"scripts/general/general.yy",},},
     {"id":{"name":"sBubble","path":"sprites/sBubble/sBubble.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
@@ -46,7 +46,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rPlay","path":"rooms/rPlay/rPlay.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
