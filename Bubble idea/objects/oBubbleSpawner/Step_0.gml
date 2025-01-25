@@ -26,6 +26,7 @@ else
 			path_set_closed(_path, false);
 			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
 			_bubble.targetPath = _path;
+			_bubble.fromLane = LANE.RIGHT;
 			
 			array_push(global.rightTraffic, _bubble);
 		break;
@@ -43,6 +44,7 @@ else
 			path_set_closed(_path, false);
 			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
 			_bubble.targetPath = _path;
+			_bubble.fromLane = LANE.LEFT;
 			
 			array_push(global.leftTraffic, _bubble);
 		break;
@@ -60,6 +62,7 @@ else
 			path_set_closed(_path, false);
 			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
 			_bubble.targetPath = _path;
+			_bubble.fromLane = LANE.UP;
 			
 			array_push(global.upTraffic, _bubble);
 		break;
@@ -77,6 +80,7 @@ else
 			path_set_closed(_path, false);
 			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
 			_bubble.targetPath = _path;
+			_bubble.fromLane = LANE.DOWN;
 			
 			array_push(global.downTraffic, _bubble);
 		break;

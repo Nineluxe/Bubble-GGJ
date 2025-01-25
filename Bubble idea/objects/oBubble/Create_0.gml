@@ -3,14 +3,9 @@
 movespeed = global.bubbleMovespeed;
 
 // General Variables
+fromLane = LANE.NONE;
 targetPath = undefined;
-currentPath = undefined;
 pathInitialized = false;
-targetPathStarted = false;
-startPath = false;
-xDirection = 0.0;
-yDirection = 0.0;
-xTarget = 0.0;
-yTarget = 0.0;
-
 startPathingTimer = 0.0;
+isCrossingRoad = false; // Used to check if its crossing the intersection
+collisionList = ds_list_create();

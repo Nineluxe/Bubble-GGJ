@@ -90,6 +90,7 @@ switch (currentStep)
 			{
 				var _inst = selectedTrafficArray[0];
 				moveBubbles(_inst, selectedLane, targetLane);
+				_inst.isCrossingRoad = true;
 				array_shift(selectedTrafficArray);
 			}
 			
