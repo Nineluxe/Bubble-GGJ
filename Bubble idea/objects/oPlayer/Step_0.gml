@@ -89,7 +89,7 @@ switch (currentStep)
 			repeat(numberBubbles)
 			{
 				var _inst = selectedTrafficArray[0];
-				instance_destroy(_inst);
+				moveBubbles(_inst, selectedLane, targetLane);
 				array_shift(selectedTrafficArray);
 			}
 			
@@ -101,6 +101,8 @@ switch (currentStep)
 			
 			numberBubbles = 0;
 			currentStep = STEP.HIGHLIGHT_LANE;
+			selectedLane = LANE.NONE;
+			targetLane = LANE.NONE;
 		}
 	break;
 }

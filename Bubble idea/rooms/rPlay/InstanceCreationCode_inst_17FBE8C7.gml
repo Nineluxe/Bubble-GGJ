@@ -1,0 +1,3 @@
+global.downSideFromLane = [
+		x, y
+	];

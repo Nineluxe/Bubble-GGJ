@@ -1,0 +1,3 @@
+global.rightSideFromLane = [
+		x, y
+	];

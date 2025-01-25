@@ -36,6 +36,7 @@
   "resources":[
     {"id":{"name":"oBubble","path":"objects/oBubble/oBubble.yy",},},
     {"id":{"name":"oBubbleSpawner","path":"objects/oBubbleSpawner/oBubbleSpawner.yy",},},
+    {"id":{"name":"oBubbleStopMarker","path":"objects/oBubbleStopMarker/oBubbleStopMarker.yy",},},
     {"id":{"name":"oController","path":"objects/oController/oController.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"pRight","path":"paths/pRight/pRight.yy",},},

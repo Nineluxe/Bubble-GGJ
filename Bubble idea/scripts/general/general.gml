@@ -1,5 +1,5 @@
 
-
+// Get lane selection
 function getLaneSelection(horizontalDirection, verticalDirection)
 {
 	if (horizontalDirection != 0)
@@ -25,6 +25,176 @@ function getLaneSelection(horizontalDirection, verticalDirection)
 		}
 	}
 }
+
+
+// Path bubbles movement
+// Takes bubble instance, the lane sent from, and the lane sending to.
+function moveBubbles(_inst, _fromLane, _toLane)
+{
+	switch (_fromLane)
+	{
+		case LANE.RIGHT:
+			bubbleFromRight(_inst, _toLane);
+		break;
+		case LANE.LEFT:
+			bubbleFromLeft(_inst, _toLane);
+		break;
+		case LANE.UP:
+			bubbleFromUp(_inst, _toLane);
+		break;
+		case LANE.DOWN:
+			bubbleFromDown(_inst, _toLane);
+		break;
+	}
+}
+
+
+// Sending bubbles from the right lane to somewhere else
+function bubbleFromRight(_inst, _toLane)
+{
+	// Initialize path variables
+	var _path = path_add();
+	var _xStart, _yStart, _xStop, _yStop, _bubbleSep;
+		
+	// Erase current path
+	with (_inst)
+	{
+		path_clear_points(targetPath);
+		pathInitialized = false;
+	}
+	
+	// These are common variables between every lane
+	_xStart = _inst.x;
+	_yStart = _inst.y;
+		
+	switch (_toLane)
+	{
+		case LANE.RIGHT:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.rightSideFromLane[0], global.rightSideFromLane[1], 100); // To the stop point
+			path_add_point(_path, global.rightSideFromLane[0] - 32, global.rightSideToLane[1] - 16, 100); // Rounding out the curve
+			path_add_point(_path, global.rightSideToLane[0], global.rightSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, global.roomWidth + 16, global.rightSideToLane[1], 100); // Finally off-screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+	
+		break;
+		
+		case LANE.LEFT:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.rightSideFromLane[0], global.rightSideFromLane[1], 100); // Stop point
+			path_add_point(_path, global.leftSideToLane[0], global.leftSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, -16, global.leftSideToLane[1], 100); // Off screen
+			
+		break;
+		
+		case LANE.UP:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.rightSideFromLane[0], global.rightSideFromLane[1], 100); // Stop point
+			path_add_point(_path, global.upSideToLane[0] + 8, global.rightSideFromLane[1], 100); // Rounding the curve
+			path_add_point(_path, global.upSideToLane[0], global.upSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.upSideToLane[0], -16, 100); // Off screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+			
+		break;
+		
+		case LANE.DOWN:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.rightSideFromLane[0], global.rightSideFromLane[1], 100);
+			path_add_point(_path, global.downSideToLane[0], global.downSideToLane[1], 100);
+			path_add_point(_path, global.downSideToLane[0], global.roomHeight + 16, 100);
+			
+			// Make path smooth
+			path_set_kind(_path, 1);	
+			
+		break;
+	}
+	
+	path_set_closed(_path, false);
+	_inst.targetPath = _path;
+}
+
+
+
+function bubbleFromLeft(_inst, _toLane)
+{
+	switch (_toLane)
+	{
+		case LANE.RIGHT:
+		
+		break;
+		
+		case LANE.LEFT:
+		
+		break;
+		
+		case LANE.UP:
+		
+		break;
+		
+		case LANE.DOWN:
+		
+		break;
+	}	
+}
+
+
+
+function bubbleFromUp(_inst, _toLane)
+{
+	switch (_toLane)
+	{
+		case LANE.RIGHT:
+		
+		break;
+		
+		case LANE.LEFT:
+		
+		break;
+		
+		case LANE.UP:
+		
+		break;
+		
+		case LANE.DOWN:
+		
+		break;
+	}	
+}
+
+
+
+function bubbleFromDown(_inst, _toLane)
+{
+	switch (_toLane)
+	{
+		case LANE.RIGHT:
+		
+		break;
+		
+		case LANE.LEFT:
+		
+		break;
+		
+		case LANE.UP:
+		
+		break;
+		
+		case LANE.DOWN:
+		
+		break;
+	}
+}
+
+
+
 
 // Align Bubbles
 function alignBubbles(_trafficArray)
@@ -54,32 +224,32 @@ function alignBubbles(_trafficArray)
 			case global.rightTraffic:
 				
 				// Create bubble on the right side
-				_xStop = global.rightStopXValue + _bubbleSep;
-				_yStop = global.rightStartYValue;
+				_xStop = global.rightSideFromLane[0] + _bubbleSep;
+				_yStop = global.rightSideFromLane[1];
 				
 			break;
 		
 			case global.leftTraffic:
 		
 				// Create bubble on the left side
-				_xStop = global.leftStopXValue - _bubbleSep;
-				_yStop = global.leftStartYValue;
+				_xStop = global.leftSideFromLane[0] - _bubbleSep;
+				_yStop = global.leftSideFromLane[1];
 				
 			break;
 		
 			case global.upTraffic:
 		
 				// Create bubble on the up side
-				_xStop = global.upStartXValue;
-				_yStop = global.upStopYValue - _bubbleSep;
+				_xStop = global.upSideFromLane[0]
+				_yStop = global.upSideFromLane[1] - _bubbleSep;
 
 			break;
 		
 			case global.downTraffic:
 		
 				// Create bubble on the down side
-				_xStop = global.downStartXValue;
-				_yStop = global.downStopYValue + _bubbleSep;
+				_xStop = global.downSideFromLane[0]
+				_yStop = global.downSideFromLane[1] + _bubbleSep;
 
 			break;
 		}
