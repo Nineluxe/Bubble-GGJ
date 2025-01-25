@@ -8,10 +8,12 @@ switch (currentStep)
 {
 	case (STEP.HIGHLIGHT_LANE):
 		
+		// Debug string
 		currentStepString = "Choose lane";
 		if (horizontalDirection != 0) or (verticalDirection != 0)
 		{
 			selectedLane = getLaneSelection(horizontalDirection, verticalDirection);
+			
 			switch (selectedLane)
 			{
 				case LANE.LEFT:
@@ -31,6 +33,7 @@ switch (currentStep)
 				break;
 			}
 			
+			// Make sure selected lane has bubbles
 			if (array_length(selectedTrafficArray) <= 0)
 			{
 				selectedLane = undefined;
@@ -56,6 +59,7 @@ switch (currentStep)
 		
 		currentStepString = "Number of bubbles";
 		
+		// Choose how many bubbles to send where
 		switch (targetLane)
 		{
 			case LANE.LEFT:
@@ -78,13 +82,21 @@ switch (currentStep)
 		// Clamp bubble amount
 		numberBubbles = clamp(numberBubbles, 0, array_length(selectedTrafficArray));
 		
+		// Send the bubbles
 		if (keyboard_check_pressed(vk_space))
 		{
+			// Delete them from the array
 			repeat(numberBubbles)
 			{
 				var _inst = selectedTrafficArray[0];
 				instance_destroy(_inst);
 				array_shift(selectedTrafficArray);
+			}
+			
+			// Shift other bubbles forward
+			if (array_length(selectedTrafficArray) > 0)
+			{
+				alignBubbles(selectedTrafficArray);
 			}
 			
 			numberBubbles = 0;

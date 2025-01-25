@@ -24,6 +24,8 @@ global.upTraffic = [];
 global.downTraffic = [];
 
 global.bubbleSeparation = 16;
+global.bubbleMovespeed = 1.0;
+global.bubblePathingWaitTime = global.bubbleSeparation / global.bubbleMovespeed;
 
 // Initialize Step For Player
 enum STEP
