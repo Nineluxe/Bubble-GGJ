@@ -107,9 +107,10 @@ function bubbleFromRight(_inst, _toLane)
 		case LANE.DOWN:
 		
 			path_add_point(_path, _xStart, _yStart, 100);
-			path_add_point(_path, global.rightSideFromLane[0], global.rightSideFromLane[1], 100);
-			path_add_point(_path, global.downSideToLane[0], global.downSideToLane[1], 100);
-			path_add_point(_path, global.downSideToLane[0], global.roomHeight + 16, 100);
+			path_add_point(_path, global.rightSideFromLane[0], global.rightSideFromLane[1], 100); // Stop point
+			path_add_point(_path,  global.downSideToLane[0],  global.downSideToLane[1] - 48, 100); // Rounding the curve
+			path_add_point(_path, global.downSideToLane[0], global.downSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.downSideToLane[0], global.roomHeight + 16, 100); // Off screen
 			
 			// Make path smooth
 			path_set_kind(_path, 1);	
@@ -123,75 +124,239 @@ function bubbleFromRight(_inst, _toLane)
 
 
 
+// Sending bubbles from the right lane to somewhere else
 function bubbleFromLeft(_inst, _toLane)
 {
+	// Initialize path variables
+	var _path = path_add();
+	var _xStart, _yStart, _xStop, _yStop, _bubbleSep;
+		
+	// Erase current path
+	with (_inst)
+	{
+		path_clear_points(targetPath);
+		pathInitialized = false;
+	}
+	
+	// These are common variables between every lane
+	_xStart = _inst.x;
+	_yStart = _inst.y;
+		
 	switch (_toLane)
 	{
 		case LANE.RIGHT:
 		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.leftSideFromLane[0], global.leftSideFromLane[1], 100); // To the stop point
+			path_add_point(_path, global.rightSideToLane[0], global.rightSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, global.roomWidth + 16, global.rightSideToLane[1], 100); // Finally off-screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+	
 		break;
 		
 		case LANE.LEFT:
 		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.leftSideFromLane[0], global.leftSideFromLane[1], 100); // To the stop point
+			path_add_point(_path, global.leftSideToLane[0] + 32, global.leftSideToLane[1] + 16, 100); // Rounding out the curve
+			path_add_point(_path, global.leftSideToLane[0], global.leftSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, -16, global.leftSideToLane[1], 100); // Finally off-screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+			
 		break;
 		
 		case LANE.UP:
 		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.leftSideFromLane[0], global.leftSideFromLane[1], 100); // Stop point
+			path_add_point(_path, global.upSideToLane[0] - 8, global.leftSideFromLane[1], 100); // Rounding the curve
+			path_add_point(_path, global.upSideToLane[0], global.upSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.upSideToLane[0], -16, 100); // Off screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+			
 		break;
 		
 		case LANE.DOWN:
 		
-		break;
-	}	
-}
-
-
-
-function bubbleFromUp(_inst, _toLane)
-{
-	switch (_toLane)
-	{
-		case LANE.RIGHT:
-		
-		break;
-		
-		case LANE.LEFT:
-		
-		break;
-		
-		case LANE.UP:
-		
-		break;
-		
-		case LANE.DOWN:
-		
-		break;
-	}	
-}
-
-
-
-function bubbleFromDown(_inst, _toLane)
-{
-	switch (_toLane)
-	{
-		case LANE.RIGHT:
-		
-		break;
-		
-		case LANE.LEFT:
-		
-		break;
-		
-		case LANE.UP:
-		
-		break;
-		
-		case LANE.DOWN:
-		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.leftSideFromLane[0], global.leftSideFromLane[1], 100); // Stop point
+			path_add_point(_path,  global.downSideToLane[0],  global.downSideToLane[1] - 16, 100); // Rounding the curve
+			path_add_point(_path, global.downSideToLane[0], global.downSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.downSideToLane[0], global.roomHeight + 16, 100); // Off screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);	
+			
 		break;
 	}
+	
+	path_set_closed(_path, false);
+	_inst.targetPath = _path;
 }
+
+
+
+
+// Sending bubbles from the right lane to somewhere else
+function bubbleFromUp(_inst, _toLane)
+{
+	// Initialize path variables
+	var _path = path_add();
+	var _xStart, _yStart, _xStop, _yStop, _bubbleSep;
+		
+	// Erase current path
+	with (_inst)
+	{
+		path_clear_points(targetPath);
+		pathInitialized = false;
+	}
+	
+	// These are common variables between every lane
+	_xStart = _inst.x;
+	_yStart = _inst.y;
+		
+	switch (_toLane)
+	{
+		case LANE.RIGHT:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.upSideFromLane[0], global.upSideFromLane[1], 100); // To the stop point
+			path_add_point(_path, global.rightSideToLane[0] - 64, global.rightSideToLane[1], 100); // Round
+			path_add_point(_path, global.rightSideToLane[0], global.rightSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, global.roomWidth + 16, global.rightSideToLane[1], 100); // Finally off-screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+	
+		break;
+		
+		case LANE.LEFT:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.upSideFromLane[0], global.upSideFromLane[1], 100); // To the stop point
+			path_add_point(_path, global.leftSideToLane[0] + 16, global.leftSideToLane[1], 100); // Rounding out the curve
+			path_add_point(_path, global.leftSideToLane[0], global.leftSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, -16, global.leftSideToLane[1], 100); // Finally off-screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+			
+		break;
+		
+		case LANE.UP:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.upSideFromLane[0], global.upSideFromLane[1], 100); // Stop point
+			path_add_point(_path, global.upSideToLane[0] - 16, global.upSideFromLane[1] + 32, 100); // Rounding the curve
+			path_add_point(_path, global.upSideToLane[0], global.upSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.upSideToLane[0], -16, 100); // Off screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+			
+		break;
+		
+		case LANE.DOWN:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.upSideFromLane[0], global.upSideFromLane[1], 100); // Stop point
+			path_add_point(_path, global.downSideToLane[0], global.downSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.downSideToLane[0], global.roomHeight + 16, 100); // Off screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);	
+			
+		break;
+	}
+	
+	path_set_closed(_path, false);
+	_inst.targetPath = _path;
+}
+
+
+
+// Sending bubbles from the right lane to somewhere else
+function bubbleFromDown(_inst, _toLane)
+{
+	// Initialize path variables
+	var _path = path_add();
+	var _xStart, _yStart, _xStop, _yStop, _bubbleSep;
+		
+	// Erase current path
+	with (_inst)
+	{
+		path_clear_points(targetPath);
+		pathInitialized = false;
+	}
+	
+	// These are common variables between every lane
+	_xStart = _inst.x;
+	_yStart = _inst.y;
+		
+	switch (_toLane)
+	{
+		case LANE.RIGHT:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.downSideFromLane[0], global.downSideFromLane[1], 100); // To the stop point
+			path_add_point(_path, global.rightSideToLane[0] - 32, global.rightSideToLane[1], 100); // Round
+			path_add_point(_path, global.rightSideToLane[0], global.rightSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, global.roomWidth + 16, global.rightSideToLane[1], 100); // Finally off-screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+	
+		break;
+		
+		case LANE.LEFT:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.downSideFromLane[0], global.downSideFromLane[1], 100); // To the stop point
+			path_add_point(_path, global.leftSideToLane[0] + 64, global.leftSideToLane[1], 100); // Rounding out the curve
+			path_add_point(_path, global.leftSideToLane[0], global.leftSideToLane[1], 100); // To the "to" lane
+			path_add_point(_path, -16, global.leftSideToLane[1], 100); // Finally off-screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+			
+		break;
+		
+		case LANE.UP:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.downSideFromLane[0], global.downSideFromLane[1], 100); // Stop point
+			path_add_point(_path, global.upSideToLane[0], global.upSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.upSideToLane[0], -16, 100); // Off screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);
+			
+		break;
+		
+		case LANE.DOWN:
+		
+			path_add_point(_path, _xStart, _yStart, 100);
+			path_add_point(_path, global.downSideFromLane[0], global.downSideFromLane[1], 100); // Stop point
+			path_add_point(_path, global.downSideToLane[0] + 16, global.downSideFromLane[1] - 32, 100); // Rounding the curve
+			path_add_point(_path, global.downSideToLane[0], global.downSideToLane[1], 100);	// To the "to" lane
+			path_add_point(_path, global.downSideToLane[0], global.roomHeight + 16, 100); // Off screen
+			
+			// Make path smooth
+			path_set_kind(_path, 1);	
+			
+		break;
+	}
+	
+	path_set_closed(_path, false);
+	_inst.targetPath = _path;
+}
+
 
 
 
