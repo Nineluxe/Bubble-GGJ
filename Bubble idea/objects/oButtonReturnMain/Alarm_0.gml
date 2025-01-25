@@ -1,2 +1,2 @@
 /// @description Run timer for transition then go to room
-room_goto(rPlay);
+room_goto(rMainMenu);

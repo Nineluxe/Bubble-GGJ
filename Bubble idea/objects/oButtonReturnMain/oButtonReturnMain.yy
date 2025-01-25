@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"oButtonParent",
+  "%Name":"oButtonReturnMain",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -10,7 +10,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oButtonParent",
+  "name":"oButtonReturnMain",
   "overriddenProperties":[],
   "parent":{
     "name":"UI Objects",
@@ -31,7 +31,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"Button_text","filters":[],"listItems":[],"multiselect":false,"name":"Button_text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"Button_text","filters":[],"listItems":[],"multiselect":false,"name":"Button_text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Main Menu","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"Button_highlighted","filters":[],"listItems":[],"multiselect":false,"name":"Button_highlighted","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sButtonHighlighted","path":"sprites/sButtonHighlighted/sButtonHighlighted.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sButtonHighlighted","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"Button_clicked","filters":[],"listItems":[],"multiselect":false,"name":"Button_clicked","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sButtonClicked","path":"sprites/sButtonClicked/sButtonClicked.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sButtonClicked","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"Button_idle","filters":[],"listItems":[],"multiselect":false,"name":"Button_idle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sButtonIdle","path":"sprites/sButtonIdle/sButtonIdle.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sButtonIdle","varType":5,},

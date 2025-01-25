@@ -1,3 +1,3 @@
 /// @description Button Clicked
 sprite_index = Button_clicked;
-alarm_set(0, 65);
+alarm_set(0, 30);

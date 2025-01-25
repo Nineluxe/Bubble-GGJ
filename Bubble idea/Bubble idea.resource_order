@@ -21,10 +21,12 @@
   "ResourceOrderSettings":[
     {"name":"oButtonHelp","order":2,"path":"objects/oButtonHelp/oButtonHelp.yy",},
     {"name":"oButtonQuit","order":3,"path":"objects/oButtonQuit/oButtonQuit.yy",},
+    {"name":"oButtonReturnMain","order":6,"path":"objects/oButtonReturnMain/oButtonReturnMain.yy",},
     {"name":"oButtonStartGame","order":1,"path":"objects/oButtonStartGame/oButtonStartGame.yy",},
     {"name":"oController","order":2,"path":"objects/oController/oController.yy",},
     {"name":"oPlayer","order":1,"path":"objects/oPlayer/oPlayer.yy",},
     {"name":"oPressAnyKey","order":5,"path":"objects/oPressAnyKey/oPressAnyKey.yy",},
+    {"name":"rHelp","order":3,"path":"rooms/rHelp/rHelp.yy",},
     {"name":"rMainMenu","order":2,"path":"rooms/rMainMenu/rMainMenu.yy",},
     {"name":"rTitle","order":1,"path":"rooms/rTitle/rTitle.yy",},
     {"name":"sBackground","order":3,"path":"sprites/sBackground/sBackground.yy",},
