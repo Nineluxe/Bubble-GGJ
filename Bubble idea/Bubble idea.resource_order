@@ -15,8 +15,8 @@
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"Player Sprites","order":4,"path":"folders/Sprites/Player Sprites.yy",},
-    {"name":"Greens","order":4,"path":"folders/Sprites/Player Sprites/Greens.yy",},
     {"name":"Faces","order":6,"path":"folders/Sprites/Player Sprites/Faces.yy",},
+    {"name":"Greens","order":4,"path":"folders/Sprites/Player Sprites/Greens.yy",},
     {"name":"Reds","order":5,"path":"folders/Sprites/Player Sprites/Reds.yy",},
     {"name":"UI Sprites","order":3,"path":"folders/Sprites/UI Sprites.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
@@ -45,7 +45,6 @@
     {"name":"sPlayerRedRight","order":2,"path":"sprites/sPlayerRedRight/sPlayerRedRight.yy",},
     {"name":"sPlayerRedTop","order":1,"path":"sprites/sPlayerRedTop/sPlayerRedTop.yy",},
     {"name":"sPressAnyKey","order":4,"path":"sprites/sPressAnyKey/sPressAnyKey.yy",},
-    {"name":"sStopSign","order":1,"path":"sprites/sStopSign/sStopSign.yy",},
     {"name":"StandardRight","order":2,"path":"sprites/StandardRight/StandardRight.yy",},
   ],
 }
