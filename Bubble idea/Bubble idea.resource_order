@@ -17,8 +17,10 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"oBubbleSpawner","order":3,"path":"objects/oBubbleSpawner/oBubbleSpawner.yy",},
     {"name":"oController","order":2,"path":"objects/oController/oController.yy",},
     {"name":"oPlayer","order":1,"path":"objects/oPlayer/oPlayer.yy",},
+    {"name":"pRight","order":4,"path":"paths/pRight/pRight.yy",},
     {"name":"pRightDown","order":1,"path":"paths/pRightDown/pRightDown.yy",},
     {"name":"pRightLeft","order":2,"path":"paths/pRightLeft/pRightLeft.yy",},
     {"name":"pRightRight","order":3,"path":"paths/pRightRight/pRightRight.yy",},

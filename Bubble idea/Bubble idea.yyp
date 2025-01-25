@@ -35,8 +35,10 @@
   "name":"Bubble idea",
   "resources":[
     {"id":{"name":"oBubble","path":"objects/oBubble/oBubble.yy",},},
+    {"id":{"name":"oBubbleSpawner","path":"objects/oBubbleSpawner/oBubbleSpawner.yy",},},
     {"id":{"name":"oController","path":"objects/oController/oController.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
+    {"id":{"name":"pRight","path":"paths/pRight/pRight.yy",},},
     {"id":{"name":"pRightDown","path":"paths/pRightDown/pRightDown.yy",},},
     {"id":{"name":"pRightLeft","path":"paths/pRightLeft/pRightLeft.yy",},},
     {"id":{"name":"pRightRight","path":"paths/pRightRight/pRightRight.yy",},},
