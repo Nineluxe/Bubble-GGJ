@@ -2,7 +2,7 @@
   "$GMPath":"",
   "%Name":"pRight",
   "closed":false,
-  "kind":0,
+  "kind":1,
   "name":"pRight",
   "parent":{
     "name":"Paths",
@@ -11,6 +11,7 @@
   "points":[
     {"speed":100.0,"x":336.0,"y":60.0,},
     {"speed":100.0,"x":224.0,"y":60.0,},
+    {"speed":100.0,"x":334.50006,"y":125.0,},
   ],
   "precision":4,
   "resourceType":"GMPath",
