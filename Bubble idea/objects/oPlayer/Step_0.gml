@@ -12,7 +12,33 @@ switch (currentStep)
 		if (horizontalDirection != 0) or (verticalDirection != 0)
 		{
 			selectedLane = getLaneSelection(horizontalDirection, verticalDirection);
-			currentStep++;
+			switch (selectedLane)
+			{
+				case LANE.LEFT:
+					selectedTrafficArray = global.leftTraffic;
+				break;
+			
+				case LANE.RIGHT:
+					selectedTrafficArray = global.rightTraffic;
+				break;
+			
+				case LANE.UP:
+					selectedTrafficArray = global.upTraffic;
+				break;
+			
+				case LANE.DOWN:
+					selectedTrafficArray = global.downTraffic;
+				break;
+			}
+			
+			if (array_length(selectedTrafficArray) <= 0)
+			{
+				selectedLane = undefined;
+			}
+			else
+			{
+				currentStep++;
+			}
 		}
 	break;
 	
@@ -33,7 +59,6 @@ switch (currentStep)
 		switch (targetLane)
 		{
 			case LANE.LEFT:
-				
 				numberBubbles += -horizontalDirection;
 			break;
 			
@@ -50,8 +75,18 @@ switch (currentStep)
 			break;
 		}
 		
+		// Clamp bubble amount
+		numberBubbles = clamp(numberBubbles, 0, array_length(selectedTrafficArray));
+		
 		if (keyboard_check_pressed(vk_space))
 		{
+			repeat(numberBubbles)
+			{
+				var _inst = selectedTrafficArray[0];
+				instance_destroy(_inst);
+				array_shift(selectedTrafficArray);
+			}
+			
 			numberBubbles = 0;
 			currentStep = STEP.HIGHLIGHT_LANE;
 		}

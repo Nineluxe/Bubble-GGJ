@@ -1,3 +1,4 @@
+randomize();
 
 // Initialize camera
 global.camx = 0;
@@ -6,15 +7,23 @@ global.roomWidth = 320;
 global.roomHeight = 240;
 
 // Define default path values
-global.rightStartYValue = global.roomHeight / 4;
-global.leftStartYValue = global.roomHeight - (global.roomHeight / 4);
-global.rightStopXValue = global.roomWidth - (global.roomWidth / 4);
-global.leftStopXValue = global.roomWidth / 4;
+divider = 4;
+global.rightStartYValue = (global.roomHeight / (divider - 1));
+global.leftStartYValue = global.roomHeight - (global.roomHeight / (divider - 1));
+global.rightStopXValue = global.roomWidth - (global.roomWidth / divider);
+global.leftStopXValue = global.roomWidth / divider;
 
-global.upStartXValue = global.roomWidth / 4;
-global.downStartXValue = global.roomWidth - (global.roomWidth / 4);
-global.upStopYValue = global.roomHeight / 4;
-global.downStopYValue = global.roomHeight - (global.roomHeight / 4);
+global.upStartXValue = global.roomWidth / (divider - 1);
+global.downStartXValue = global.roomWidth - (global.roomWidth / (divider - 1));
+global.upStopYValue = global.roomHeight / divider;
+global.downStopYValue = global.roomHeight - (global.roomHeight / divider);
+
+global.rightTraffic = [];
+global.leftTraffic = [];
+global.upTraffic = [];
+global.downTraffic = [];
+
+global.bubbleSeparation = 16;
 
 // Initialize Step For Player
 enum STEP
