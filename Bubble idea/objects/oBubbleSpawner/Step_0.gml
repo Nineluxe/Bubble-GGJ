@@ -24,7 +24,7 @@ else
 			_yStop = global.rightSideFromLane[1];
 			path_add_point(_path,_xStop, _yStop, 100);
 			path_set_closed(_path, false);
-			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
+			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oLaneRightObject);
 			_bubble.targetPath = _path;
 			_bubble.fromLane = LANE.RIGHT;
 			
@@ -42,7 +42,7 @@ else
 			_yStop = global.leftSideFromLane[1];
 			path_add_point(_path, _xStop, _yStop, 100);
 			path_set_closed(_path, false);
-			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
+			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oLaneLeftObject);
 			_bubble.targetPath = _path;
 			_bubble.fromLane = LANE.LEFT;
 			
@@ -60,7 +60,7 @@ else
 			_yStop = global.upSideFromLane[1] - _bubbleSep;
 			path_add_point(_path, _xStop, _yStop, 100);
 			path_set_closed(_path, false);
-			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
+			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oLaneUpObject);
 			_bubble.targetPath = _path;
 			_bubble.fromLane = LANE.UP;
 			
@@ -78,7 +78,7 @@ else
 			_yStop =  global.downSideFromLane[1] + _bubbleSep;
 			path_add_point(_path, _xStop, _yStop, 100);
 			path_set_closed(_path, false);
-			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oBubble);
+			_bubble = instance_create_layer(_xStart, _yStart, "Instances", oLaneDownObject);
 			_bubble.targetPath = _path;
 			_bubble.fromLane = LANE.DOWN;
 			

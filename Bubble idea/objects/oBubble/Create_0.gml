@@ -8,4 +8,4 @@ targetPath = undefined;
 pathInitialized = false;
 startPathingTimer = 0.0;
 isCrossingRoad = false; // Used to check if its crossing the intersection
-collisionList = ds_list_create();
+
