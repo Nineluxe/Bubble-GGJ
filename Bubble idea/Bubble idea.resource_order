@@ -19,6 +19,9 @@
   "ResourceOrderSettings":[
     {"name":"oController","order":2,"path":"objects/oController/oController.yy",},
     {"name":"oPlayer","order":1,"path":"objects/oPlayer/oPlayer.yy",},
+    {"name":"pRightDown","order":1,"path":"paths/pRightDown/pRightDown.yy",},
+    {"name":"pRightLeft","order":2,"path":"paths/pRightLeft/pRightLeft.yy",},
+    {"name":"pRightRight","order":3,"path":"paths/pRightRight/pRightRight.yy",},
     {"name":"sPlayer","order":2,"path":"sprites/sPlayer/sPlayer.yy",},
     {"name":"sStopSign","order":1,"path":"sprites/sStopSign/sStopSign.yy",},
   ],
