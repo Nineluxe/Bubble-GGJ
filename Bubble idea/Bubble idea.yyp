@@ -34,6 +34,7 @@
   },
   "name":"Bubble idea",
   "resources":[
+    {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sBubble","path":"sprites/sBubble/sBubble.yy",},},
     {"id":{"name":"sStopSign","path":"sprites/sStopSign/sStopSign.yy",},},
