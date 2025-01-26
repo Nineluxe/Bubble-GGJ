@@ -34,5 +34,5 @@
     "path":"sprites/sBubble/sBubble.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

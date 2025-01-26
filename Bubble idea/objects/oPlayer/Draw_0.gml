@@ -7,10 +7,13 @@ var _y = global.camy + global.roomHeight / 2;
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
-draw_text(_x, _y + (i * ySeperation), "Current Step: " + string(currentStepString));
-i++;
-draw_text(_x, _y + (i * ySeperation), "# of Bubbles: " + string(numberBubbles));
-i++;
+//draw_text(_x, _y + (i * ySeperation), "Current Step: " + string(currentStepString));
+//i++;
+//draw_text(_x, _y + (i * ySeperation), "# of Bubbles: " + string(numberBubbles));
+//i++;
+
+draw_self();
+
 
 // Draw From lane
 if (selectedLane != LANE.NONE)
@@ -49,7 +52,7 @@ if (selectedLane != LANE.NONE)
 	// Draw highlighted lane
 	draw_set_alpha(0.3);
 	draw_rectangle_color(
-		_x1,_y1,_x2,_y2,c_green,c_green,c_green,c_green,false
+		_x1,_y1,_x2,_y2,c_green,c_green,c_green,c_green,true
 	);
 	draw_set_alpha(1.0);
 }
@@ -92,7 +95,7 @@ if (targetLane != LANE.NONE)
 	// Draw highlighted lane
 	draw_set_alpha(0.3);
 	draw_rectangle_color(
-		_x1,_y1,_x2,_y2,c_red,c_red,c_red,c_red,false
+		_x1,_y1,_x2,_y2,c_red,c_red,c_red,c_red,true
 	);
 	draw_set_alpha(1.0);
 }

@@ -80,8 +80,48 @@ switch (currentStep)
 		}
 		
 		// Clamp bubble amount
-		numberBubbles = clamp(numberBubbles, 0, array_length(selectedTrafficArray));
+		numberBubbles = clamp(numberBubbles, 0, array_length(selectedTrafficArray));	
+		numberBubbles = clamp(numberBubbles, 0, global.bubbleLaneAmount);
 		
+		// Add pointer fingers for selecting bubbles
+		if (numberBubbles > array_length(pointerFingerArray))
+		{
+			var _x = 0;
+			var _y = 0;
+			
+			switch(selectedTrafficArray)
+			{
+				case global.leftTraffic:
+					_x = global.leftSideFromLane[0] - (global.bubbleSeparation * (numberBubbles - 1));
+					_y = global.leftSideFromLane[1] - 16;
+				break;
+				
+				case global.rightTraffic:
+					_x = global.rightSideFromLane[0] + (global.bubbleSeparation * (numberBubbles - 1));
+					_y = global.rightSideFromLane[1] - 16;
+				break;
+				
+				case global.upTraffic:
+					_x = global.upSideFromLane[0];
+					_y = global.upSideFromLane[1] - 16 - (global.bubbleSeparation * (numberBubbles - 1));
+				break;
+				
+				case global.downTraffic:
+					_x = global.downSideFromLane[0];
+					_y = global.downSideFromLane[1] - 16 + (global.bubbleSeparation * (numberBubbles - 1));
+				break;
+			}
+			
+			var _newFingerInstance = instance_create_layer(_x, _y, "Pointers", oFX);
+			array_push(pointerFingerArray, _newFingerInstance);
+		}
+		else if (numberBubbles < array_length(pointerFingerArray))
+		{
+			var _deletedFingerInstance = array_pop(pointerFingerArray);
+			instance_destroy(_deletedFingerInstance);
+		}
+				
+
 		// Send the bubbles
 		if (keyboard_check_pressed(vk_space))
 		{
@@ -104,6 +144,15 @@ switch (currentStep)
 			currentStep = STEP.HIGHLIGHT_LANE;
 			selectedLane = LANE.NONE;
 			targetLane = LANE.NONE;
+			
+			// Reset pointer finger array
+			for (var i = 0; i < array_length(pointerFingerArray); i++)
+			{
+				instance_destroy(pointerFingerArray[i]);
+			}
+			
+			pointerFingerArray = -1;
+			pointerFingerArray = [];
 		}
 	break;
 }

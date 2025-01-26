@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"oPlayer",
+  "%Name":"oFX",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPlayer",
+  "name":"oFX",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlayerRedRight",
-    "path":"sprites/sPlayerRedRight/sPlayerRedRight.yy",
+    "name":"pointerfinger",
+    "path":"sprites/pointerfinger/pointerfinger.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -11,7 +11,7 @@ selectedTrafficArray = undefined;
 horizontalDirection = 0;
 verticalDirection = 0;
 
-
+pointerFingerArray = [];
 
 
 currentStepString = "Choose lane"; // This is just for debug to display current step
