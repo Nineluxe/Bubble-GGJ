@@ -10,6 +10,7 @@ startPathingTimer = 0.0;
 isCrossingRoad = false; // Used to check if its crossing the intersection
 
 color = irandom_range(COLOR.BLUE, COLOR.YELLOW);
+bubbleScore = 0; // Whether or not this bubble will get you a point
 
 switch (color)
 {

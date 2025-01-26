@@ -51,6 +51,8 @@ switch (currentStep)
 		if (horizontalDirection != 0) or (verticalDirection != 0)
 		{
 			targetLane = getLaneSelection(horizontalDirection, verticalDirection);
+			
+			
 			currentStep++;
 		}
 	break;
@@ -129,6 +131,41 @@ switch (currentStep)
 			repeat(numberBubbles)
 			{
 				var _inst = selectedTrafficArray[0];
+				
+				// Check if this is a scoring bubble
+				switch (targetLane)
+				{
+					case LANE.LEFT:
+						if global.leftLaneRequest.active and (_inst.color == global.leftLaneRequest.requestedColor)
+						{
+							_inst.bubbleScore += 1;
+						}
+					break;
+					
+					case LANE.RIGHT:
+						if global.rightLaneRequest.active and (_inst.color == global.rightLaneRequest.requestedColor)
+						{
+							_inst.bubbleScore += 1;
+						}					
+					break;
+					
+					case LANE.UP:
+						if global.upLaneRequest.active and (_inst.color == global.upLaneRequest.requestedColor)
+						{
+							_inst.bubbleScore += 1;
+						}
+					break;
+					
+					case LANE.DOWN:
+						if global.downLaneRequest.active and (_inst.color == global.downLaneRequest.requestedColor)
+						{
+							_inst.bubbleScore += 1;
+						}
+					break;
+					
+					
+				}
+				
 				moveBubbles(_inst, selectedLane, targetLane);
 				_inst.isCrossingRoad = true;
 				array_shift(selectedTrafficArray);

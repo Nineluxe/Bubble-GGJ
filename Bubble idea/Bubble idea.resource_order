@@ -5,5 +5,9 @@
     {"name":"sBubbleGreen","order":2,"path":"sprites/sBubbleGreen/sBubbleGreen.yy",},
     {"name":"sBubblePink","order":3,"path":"sprites/sBubblePink/sBubblePink.yy",},
     {"name":"sBubbleYellow","order":4,"path":"sprites/sBubbleYellow/sBubbleYellow.yy",},
+    {"name":"sLightBlue","order":5,"path":"sprites/sLightBlue/sLightBlue.yy",},
+    {"name":"sLightGreen","order":6,"path":"sprites/sLightGreen/sLightGreen.yy",},
+    {"name":"sLightPink","order":7,"path":"sprites/sLightPink/sLightPink.yy",},
+    {"name":"sLightYellow","order":8,"path":"sprites/sLightYellow/sLightYellow.yy",},
   ],
 }

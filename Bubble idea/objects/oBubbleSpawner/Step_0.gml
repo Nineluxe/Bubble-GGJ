@@ -1,4 +1,9 @@
 
+if !global.initialGameStart
+{
+	exit;
+}
+
 if (bubbleSpawnTimer > 0.0)
 {
 	bubbleSpawnTimer--; 
@@ -87,5 +92,5 @@ else
 	}
 	
 	// Reset timer
-	bubbleSpawnTimer = bubbleSpawnFrequency
+	bubbleSpawnTimer = global.bubbleSpawnFrequency;
 }
