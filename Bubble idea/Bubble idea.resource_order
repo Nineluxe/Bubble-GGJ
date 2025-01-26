@@ -1,6 +1,18 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Music","order":1,"path":"folders/Sounds/Music.yy",},
+  ],
   "ResourceOrderSettings":[
+    {"name":"oBubblePop","order":1,"path":"objects/oBubblePop/oBubblePop.yy",},
+    {"name":"Aggressive_Bubble_Pop","order":9,"path":"sounds/Aggressive_Bubble_Pop/Aggressive_Bubble_Pop.yy",},
+    {"name":"Bell","order":2,"path":"sounds/Bell/Bell.yy",},
+    {"name":"Car_Horn","order":3,"path":"sounds/Car_Horn/Car_Horn.yy",},
+    {"name":"Click_Mouse_On_Selection","order":4,"path":"sounds/Click_Mouse_On_Selection/Click_Mouse_On_Selection.yy",},
+    {"name":"Hover_Mouse_Over_Selection","order":5,"path":"sounds/Hover_Mouse_Over_Selection/Hover_Mouse_Over_Selection.yy",},
+    {"name":"Play_Again_Music_Intended_to_be_looped","order":1,"path":"sounds/Play_Again_Music_Intended_to_be_looped/Play_Again_Music_Intended_to_be_looped.yy",},
+    {"name":"Soft_bubble_pop","order":6,"path":"sounds/Soft_bubble_pop/Soft_bubble_pop.yy",},
+    {"name":"Whistle","order":7,"path":"sounds/Whistle/Whistle.yy",},
+    {"name":"You_Fucked_Up_Noise","order":8,"path":"sounds/You_Fucked_Up_Noise/You_Fucked_Up_Noise.yy",},
     {"name":"sBubbleBlue","order":1,"path":"sprites/sBubbleBlue/sBubbleBlue.yy",},
     {"name":"sBubbleGreen","order":2,"path":"sprites/sBubbleGreen/sBubbleGreen.yy",},
     {"name":"sBubblePink","order":3,"path":"sprites/sBubblePink/sBubblePink.yy",},

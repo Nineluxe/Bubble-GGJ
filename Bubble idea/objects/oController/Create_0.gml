@@ -30,14 +30,17 @@ global.initialGameStart = false;
 global.initialGameStartTimer = SECOND * 1;
 
 global.bubbleSpawnFrequency = SECOND * 1.0;
+global.masterGain = 1.0;
+global.soundFXGain = 1.0;
+
 
 secondsElapsed = 0.0;
 minutesElapsed = 0.0;
 framesElapsed = 0.0;
 
 requestedLaneChangeFrequency = SECOND * 10.0; // How often the lane change timer changes
-requestedLaneChangeTimer = requestedLaneChangeFrequency; // Timer to measure length
-requestedLaneActiveTime = requestedLaneChangeFrequency; // How long the timer is created for that specific lane
+requestedLaneChangeTimer = 1.0; // Timer to measure length
+requestedLaneActiveTime = requestedLaneChangeFrequency - SECOND; // How long the timer is created for that specific lane
 
 global.difficultyThreshold = DIFFICULTY.BEGINNING;
 

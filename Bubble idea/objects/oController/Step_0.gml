@@ -31,6 +31,7 @@ else
 	_laneStruct.active = true;
 	_laneStruct.activeTimer = requestedLaneActiveTime;
 	_laneStruct.requestedColor = irandom_range(COLOR.BLUE, COLOR.YELLOW);
+	audio_play_sound(Bell, 0, false, global.soundFXGain * global.masterGain);
 	requestedLaneChangeTimer = requestedLaneChangeFrequency;
 }
 
@@ -102,11 +103,18 @@ if (framesElapsed >= SECOND)
 	framesElapsed = 0.0;
 	secondsElapsed++;
 	
+	if secondsElapsed % 30 == 0
+	{
+		global.difficultyThreshold += 1;
+	}
+	
 	if (secondsElapsed >= MINUTE)
 	{
 		secondsElapsed = 0.0;
 		minutesElapsed++;
 	}
+	
+	
 }
 
 minutesElapsed = clamp(minutesElapsed, 0, 99);
