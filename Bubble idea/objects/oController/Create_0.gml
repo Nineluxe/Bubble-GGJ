@@ -19,7 +19,15 @@ global.leftTraffic = [];
 global.upTraffic = [];
 global.downTraffic = [];
 
-
+// Initialize Bubble Colors
+enum COLOR
+{
+	BLUE,
+	GREEN,
+	PINK,
+	YELLOW,
+	TOTAL
+}
 
 // Initialize Step For Player
 enum STEP
